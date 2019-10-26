@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,400");
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #bb2a2a;
+  background: -webkit-linear-gradient(bottom, #3368FF, #74DBFF) fixed;
+  background: linear-gradient(top, #D38312, #74DBFF) fixed;
+}
+
+h1 {
+  width: 60%;
+  color: #fff;
+  font-size: 61px;
+  font-family: "Raleway", serif;
+  font-weight: 100;
+  margin:0;
+  padding-top: 15px;
+}
+
+#emailHelp{
+  color: rgb(255,255,255);
+}
+form * {
+  background: none;
+  border: none;
+}
+
+input:focus {
+  outline: 0;
+  color: #fff;
+}
+
+form {
+  margin: 0 auto;
+  width: 60%;
+}
+
+form input {
+  color: rgb(255, 255, 255);
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 2em;
+  margin: .25em 0;
+  width: 100%;
+  line-height: 1.5em;
+  border-bottom: solid rgb(255, 255, 255) 1px;
+  -webkit-transition: height 2s, opacity 1s, color 1s, border 1s;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 1s;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+form input:focus {
+  border-bottom: solid white 1px;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#hidePassword {
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+button {
+  width: 100%;
+  margin: 1em 0 0 0;
+  padding: .25em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 2em;
+  transition: color 1s, border 1s;
+  border-radius: 9px;
+}
+button:hover {
+  color: black;
+  background:rgba(255, 255, 255, 0.5);
+}
+button:focus {
+  outline: 0;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+form p {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Raleway";
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+}
+
+form a {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Raleway";
+  font-weight: 100;
+  text-align: center;
+  transition: color 1s;
+}
+
+form a:focus {
+  outline: none;
+  color: #fff;
+}
+
+:-webkit-autofill {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: none;
+  transition: border 1s, background-color 5000s ease-in-out 0s;
+}
+:-webkit-autofill :-webkit-autofill:hover,
+:-webkit-autofill :-webkit-autofill:focus {
+  border-bottom: solid 1px #fff;
+  color: #fff;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    width: 80%;
+    font-size: 4em;
+    margin: 2em auto 1em auto;
+  }
+
+  form {
+    width: 80%;
+    font-size: .8em;
+  }
+}
+
+.lbl{
+  width:0px;
+}
+
+/*codigo de radio button*/
+label {
+  display: inline-block;
+  width: 210px;
+  line-height: 2;
+  color: rgb(255,255,255);
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size: 2em;
+}
+
+/*form {
+  margin-bottom: 2em;
+}*/

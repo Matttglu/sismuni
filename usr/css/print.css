@@ -1,0 +1,16 @@
+
+  @media print{
+    body{
+      width:250px;
+      margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+
+    h4{
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+  }
