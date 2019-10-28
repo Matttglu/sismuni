@@ -37,7 +37,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-          
+
         </div>
         <div class="sidebar-brand-text mx-3">Municipio</div>
       </a>
@@ -68,9 +68,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Iniciar Sesión</a>
             <a class="collapse-item" href="register.html">Registrarse</a>
-            <a class="collapse-item" href="forgot-password.html">Recuperar contraseña</a>
         </div>
       </li>
 
@@ -163,9 +161,9 @@
             </li>
 
             <!-- Nav Item - Alerts -->
-            
 
-            
+
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
