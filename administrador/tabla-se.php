@@ -32,9 +32,9 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-          
+
         </div>
         <div class="sidebar-brand-text mx-3">Municipio</div>
       </a>
@@ -44,7 +44,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Tablero</span></a>
       </li>
@@ -65,15 +65,15 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Iniciar Sesión</a>
-            <a class="collapse-item" href="register.html">Registrarse</a>
-            <a class="collapse-item" href="forgot-password.html">Recuperar contraseña</a>
+            <a class="collapse-item" href="login.php">Iniciar Sesión</a>
+            <a class="collapse-item" href="register.php">Registrarse</a>
+            <a class="collapse-item" href="forgot-password.php">Recuperar contraseña</a>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="charts.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Gráficos</span></a>
       </li>
@@ -86,13 +86,13 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="tabla-tipousuarios.html">Tipo de usuarios</a>
-            <a class="collapse-item" href="tabla-se.html">Sistema Educativos</a>
-            <a class="collapse-item" href="tabla-directivos.html">Directivos</a>
-            <a class="collapse-item" href="tabla-usuarios.html">Usuarios</a>
-            <a class="collapse-item" href="tabla-delegaciones.html">Delegaciones</a>
-            <a class="collapse-item" href="tabla-barrios.html">Barrios</a>
-            <a class="collapse-item" href="tabla-iteracciones.html">Iteracciones</a>
+            <a class="collapse-item" href="tabla-tipousuarios.php">Tipo de usuarios</a>
+            <a class="collapse-item" href="tabla-se.php">Sistema Educativos</a>
+            <a class="collapse-item" href="tabla-directivos.php">Directivos</a>
+            <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
+            <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
+            <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
+            <a class="collapse-item" href="tabla-iteracciones.php">Iteracciones</a>
           </div>
         </div>
       </li>
@@ -160,9 +160,9 @@
             </li>
 
             <!-- Nav Item - Alerts -->
-            
 
-            
+
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -226,7 +226,7 @@
                       <th>calle</th>
                       <th>delegación</th>
                       <th>barrio</th>
-                      
+
                     </tr>
                   </thead>
                   <?php
@@ -253,7 +253,7 @@
                               echo "0 results";
                           }
                           $conn->close();
-                  ?>                
+                  ?>
                 </table>
               </div>
             </div>
@@ -299,7 +299,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="login.php">Logout</a>
         </div>
       </div>
     </div>
