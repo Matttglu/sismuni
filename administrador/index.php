@@ -68,17 +68,22 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
             <a class="collapse-item" href="register.html">Registrarse</a>
-            <a class="collapse-item" href="eliminar.php">Eliminar usuario</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+
+
+
+    <!--  <li class="nav-item">
         <a class="nav-link" href="charts.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Gráficos</span></a>
       </li>
+-->
+
+
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -435,7 +440,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="../">Logout</a>
+          <a class="btn btn-primary" href="../cerrarsession.php">Logout</a>
         </div>
       </div>
     </div>

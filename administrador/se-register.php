@@ -20,7 +20,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  
+
   <link rel="icon" type="image/png" href="img/escudo.png">
 </head>
 
@@ -32,13 +32,13 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="">
-          
+
             <div class="p-5">
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Registra tu servicio educativo!</h1>
               </div>
               <form class="user" method="post">
-                
+
                   <div>
                     <label>Tipo Servicio Educativo:</label>
                     <select name="tipo-se" id="cusSelectbox">
@@ -55,71 +55,71 @@
                   </div>
                   <br>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Autoridad">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Autoridad">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nivel">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nivel">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Número">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Número">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="IDusuario">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="IDusuario">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="IDdirector">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="IDdirector">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="calle y número">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="calle y número">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="Delegación">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="Delegación">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="Barrio">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="Barrio">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="Telefono">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="Telefono">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fecha" placeholder="Email">
+                  <input type="text" name="" class="form-control form-control-user" id="fecha" placeholder="Email">
                 </div>
                 <br>
                 <br>
                 <h3>Datos del director</h3>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="nombredirector" placeholder="Nombre">
+                  <input type="text" name="" class="form-control form-control-user" id="nombredirector" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="apellidodirector" placeholder="Apellido">
+                  <input type="text" name="" class="form-control form-control-user" id="apellidodirector" placeholder="Apellido">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="celular" placeholder="Celular">
+                  <input type="text" name="" class="form-control form-control-user" id="celular" placeholder="Celular">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="celular2" placeholder="Adjuntar otro número">
+                  <input type="text" name="" class="form-control form-control-user" id="celular2" placeholder="Adjuntar otro número">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="email" placeholder="Email">
+                  <input type="text" name="" class="form-control form-control-user" id="email" placeholder="Email">
                 </div>
                  <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="foto" placeholder="Foto">
+                  <input type="text" name="" class="form-control form-control-user" id="foto" placeholder="Foto">
                 </div>
                  <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="fechadesde" placeholder="Fecha de inicio">
+                  <input type="text" name="" class="form-control form-control-user" id="fechadesde" placeholder="Fecha de inicio">
                 </div>
                  <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="observaciones" placeholder="Observaciones">
+                  <input type="text" name="" class="form-control form-control-user" id="observaciones" placeholder="Observaciones">
                 </div>
                 <a href="./" class="btn btn-primary btn-user btn-block">
                   Registrar Servicio
                 </a>
-                
+
               </form>
-              
-              
+
+
             </div>
-          
+
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  
+
 
 </body>
 

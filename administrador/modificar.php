@@ -46,11 +46,22 @@ $row = $result->fetch_array(MYSQLI_ASSOC);
 				</div>
 
 				<div class="form-group">
-					<label for="telefono" class="col-sm-2 control-label">Rol</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="rol" name="rol" placeholder="Rol" value="<?php echo $row['rol'];?>" >
-					</div>
-				</div>
+										<div class="radio">
+												<label>
+														<input type="radio" name="rol" value="1" required> 1 (administrador)
+												</label>
+										</div>
+										<div class="radio">
+												<label>
+														<input type="radio" name="rol" value="2" required> 2 (coordinador)
+												</label>
+										</div>
+										<div class="radio">
+												<label>
+														<input type="radio" name="rol" value="3" required> 3 (referente)
+												</label>
+										</div>
+								</div>
 
         <div class="form-group">
         					<label for="email" class="col-sm-2 control-label">Email</label>
@@ -58,6 +69,14 @@ $row = $result->fetch_array(MYSQLI_ASSOC);
         						<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>"  required>
         					</div>
         				</div>
+
+								<div class="form-group">
+				        					<label for="password" class="col-sm-2 control-label">Contraseña</label>
+				        					<div class="col-sm-10">
+														<button type='hidden' id='boton' onclick='ocultar()'>Cambiar la contraseña</button>
+				        						<input type="hidden" class="form-control" id="password" name="password" placeholder="Contraseña" value="<?php echo $row['password']; ?>"  required>
+				        					</div>
+				        				</div>
 
         <div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
@@ -69,3 +88,14 @@ $row = $result->fetch_array(MYSQLI_ASSOC);
 		</div>
 	</body>
 </html>
+<script>
+function ocultar(){
+	idpass=document.getElementById('password');
+	idboton=document.getElementById('boton');
+ if (idpass.type=='hidden') {
+	  idpass.type='password';
+		idpass.value="";
+		idboton.style.display = 'none';
+	}
+}
+</script>

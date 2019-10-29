@@ -32,15 +32,6 @@ $row = mysqli_fetch_assoc($conn->query($sql));
 
         header('Location: ../administrador/index.php');
       }
-      else if ($row['password']="root"){
-        $_SESSION['loggedin'] = true;
-        $_SESSION['nombre'] = $row['nombre'];
-        $_SESSION['start'] = time();
-        $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
-
-
-        header('Location: ../administrador/index.php');
-      }
       else{
         echo '
           <center>

@@ -6,14 +6,9 @@
 	$apellido = $_POST['apellido'];
 	$rol = $_POST['rol'];
 	$email = $_POST['email'];
-
-if ($rol="coordinador"){
-	$idtipousuario=2;
-}
-else if($rol="referente"){
-	$idtipousuario=3;
-}
-	$sql = "UPDATE usuarios SET nombre='$nombre', email='$email', apellido='$apellido', idtipousuario='$idtipousuario' WHERE idusuario = '$idusuario'";
+	$pass= $_POST['password'];
+	$hash=password_hash($pass, PASSWORD_DEFAULT);
+	$sql = "UPDATE usuarios SET nombre='$nombre', email='$email', apellido='$apellido', idtipousuario='$rol',password='$hash' WHERE idusuario = '$idusuario'";
 	$resultado = $conn->query($sql);
 
 ?>
