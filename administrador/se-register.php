@@ -86,7 +86,7 @@
                 </div>
                 <br>
                 <br>
-                <h3>Datos del director</h3>
+                <h3>Datos del director / vice</h3>
                 <div class="form-group">
                   <input type="text" name="" class="form-control form-control-user" id="nombredirector" placeholder="Nombre">
                 </div>
