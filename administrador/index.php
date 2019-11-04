@@ -99,7 +99,7 @@
             <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
-            <a class="collapse-item" href="tabla-iteracciones.php">Iteracciones</a>
+            <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>
           </div>
         </div>
       </li>

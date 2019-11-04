@@ -85,7 +85,7 @@
             <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
-            <a class="collapse-item" href="tabla-iteracciones.php">Iteracciones</a>
+            <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>
           </div>
         </div>
       </li>
@@ -205,7 +205,9 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-
+          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Exportar Registros</a>
+          <br>
+          <br>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">

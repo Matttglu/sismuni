@@ -62,12 +62,12 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Páginas</span>
+          <span>Herramientas</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="register.html">Registrarse</a>
+            <h6 class="collapse-header">Cuenta:</h6>
+            <a class="collapse-item" href="register.html">Registrar</a>
           </div>
         </div>
       </li>
@@ -87,7 +87,7 @@
             <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
-            <a class="collapse-item" href="tabla-iteracciones.php">Iteracciones</a>
+            <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>
           </div>
         </div>
       </li>
@@ -207,11 +207,13 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-
+          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Exportar Registros</a>
+          <br>
+          <br>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Iteracciones</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Interacciones</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
