@@ -210,7 +210,18 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Exportar Registros</a>
+          <a href="#" class="btn btn-info btn-icon-split">
+                              <span class="icon text-white-50">
+                                <i class="fas fa-info-circle"></i>
+                              </span>
+                              <span class="text">Exportar</span>
+                            </a>
+          <a href="#" class="btn btn-success btn-icon-split">
+                              <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                              </span>
+                              <span class="text">Registrar</span>
+                            </a>
           <br>
           <br>
           <!-- DataTales Example -->
@@ -243,7 +254,7 @@
              <td><?php echo $row['rol'];?></td>
              <td><?php echo $row['email'];?></td>
              <td><a href="modificar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fa fa-edit"></span></a></td>
-             <td><a href="eliminar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fa fa-ban"></span></a></td>
+             <td><a href="eliminar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fas fa-trash"></span></a></td>
            </tr>
 <?php } ?>
                 </table>

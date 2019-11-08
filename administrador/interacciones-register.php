@@ -35,25 +35,22 @@
 
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Registra tu Barrio</h1>
+                <h1 class="h4 text-gray-900 mb-4">Interacciones con el municipio</h1>
               </div>
               <form class="user" method="post">
 
                   <br>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Barrio">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Cantidad interacciónes">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Calle">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Pendientes">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Direción">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="nombredirector" placeholder="Delegación">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Resueltos">
                 </div>
                 <a href="./" class="btn btn-primary btn-user btn-block">
-                  Registrar Barrio
+                  Registrar
                 </a>
 
               </form>
