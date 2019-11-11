@@ -15,24 +15,34 @@ $conn = new mysqli($servername,$username, $password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$checkEmail = "SELECT * FROM usuarios WHERE email = '$_POST[email]' ";
 
+// Variable $result hold the connection data and the query
+$result = $conn-> query($checkEmail);
+
+// Variable $count hold the result of the query
+$count = mysqli_num_rows($result);
+
+// If count == 1 that means the email is already on the database
+if ($count == 1) {
+  echo'<script type="text/javascript">
+      alert("El usuario ya existe");
+      window.location.href="register.html";
+      </script>';
+
+
+} else {
 $sql = "INSERT INTO usuarios (nombre, apellido, email, idtipousuario, password )
 VALUES ('". $nombre ."','". $apellido . "','". $email . "','". $tipo . "','". $hash . "')";
 
 if ($conn->query($sql) === TRUE) {
-  echo '
-    <center>
-    <h1>Usuario creado correctamente</h1>
-
- <p><a href="../administrador/"><div class="contbtn">
-      <button  type="submit" class="btn" id="btningresar"  autofocus>
-          Aceptar
-      </button>
-</center>
-  </div></a></p></div>';
+  echo'<script type="text/javascript">
+        alert("Usuario creado correctamente");
+        window.location.href="index.php";
+        </script>';
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
+}
 $conn->close();
 ?>

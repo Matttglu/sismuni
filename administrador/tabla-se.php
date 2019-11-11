@@ -216,7 +216,7 @@
                               </span>
                               <span class="text">Exportar</span>
                             </a>
-          <a href="#" class="btn btn-success btn-icon-split">
+          <a href="se-register.html" class="btn btn-success btn-icon-split">
                               <span class="icon text-white-50">
                                 <i class="fas fa-check"></i>
                               </span>
@@ -259,7 +259,7 @@
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM tipo se";
+                          $sql = "SELECT * FROM tipose";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
