@@ -120,17 +120,6 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -171,7 +160,6 @@
 
                   ?>
                 </span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -259,8 +247,6 @@
                               while($row = $result->fetch_assoc()) {
                                   echo "<tr><th>".$row["apellido"]."</th>"."<th>".$row["nombre"]."</th>"."<th>".$row["celular"]."</th>"."<th>".$row["celular2"]."</th>"."<th>".$row["email"]."</th>"."<th>".$row["fechadesde"]."</th>"."<th>".$row["observaciones"]."</th></tr>";
                               }
-                          } else {
-                              echo "0 results";
                           }
                           $conn->close();
                   ?>

@@ -45,10 +45,36 @@ $row = mysqli_fetch_assoc($conn->query($sql));
         </div></a></p></div>';
       }
 
- } else if($row['idtipousuario'] == 3) {
-   if (password_verify($contra,$row['password'])){
+ }
+ else if($row['idtipousuario'] == 2) {
+   if (password_verify($pass,$row['password'])){
      $_SESSION['loggedin'] = true;
      $_SESSION['nombre'] = $row['nombre'];
+     $_SESSION['apellido'] = $row['apellido'];
+     $_SESSION['start'] = time();
+     $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
+
+
+     header('Location: ../coordinador');
+   }else{
+     echo '
+       <center>
+       <h1>EMAIL O CONTRASEÑA INCORRECTA</h1>
+
+
+    <p><a href="../usr/index.html"><div class="contbtn">
+         <button  type="submit" class="btn" id="btningresar"  autofocus>
+             Ingresar
+         </button>
+</center>
+     </div></a></p></div>';
+   }
+}
+ else if($row['idtipousuario'] == 3) {
+   if (password_verify($pass,$row['password'])){
+     $_SESSION['loggedin'] = true;
+     $_SESSION['nombre'] = $row['nombre'];
+     $_SESSION['apellido'] = $row['apellido'];
      $_SESSION['start'] = time();
      $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
 
@@ -67,29 +93,7 @@ $row = mysqli_fetch_assoc($conn->query($sql));
      </div></a></p></div>';
    }
  }
-   else if($row['idtipousuario'] == 2) {
-     if (password_verify($contra,$row['password'])){
-       $_SESSION['loggedin'] = true;
-       $_SESSION['nombre'] = $row['nombre'];
-       $_SESSION['start'] = time();
-       $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
 
-
-       header('Location: ../cordinador');
-     }else{
-       echo '
-         <center>
-         <h1>EMAIL O CONTRASEÑA INCORRECTA</h1>
-
-
-      <p><a href="../usr/index.html"><div class="contbtn">
-           <button  type="submit" class="btn" id="btningresar"  autofocus>
-               Ingresar
-           </button>
- </center>
-       </div></a></p></div>';
-     }
-}
 
 
 ?>

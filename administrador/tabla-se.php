@@ -121,17 +121,6 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -259,7 +248,7 @@
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM tipose";
+                          $sql = "SELECT * FROM servicioeducativo";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
@@ -267,8 +256,6 @@
                               while($row = $result->fetch_assoc()) {
                                   echo "<tr><th>".$row["ID Tipo SE"]."</th>"."<th>".$row["Autoridad"]."</th>"."<th>".$row["Nivel"]."</th>"."<th>".$row["Número"]."</th>"."<th>".$row["Nombre"]."</th>"."<th>".$row["ID Usuario"]."</th>"."<th>".$row["Telefono"]."</th>"."<th>".$row["Direccion"]."</th>"."<th>".$row["Entrecalle 1"]."</th>"."<th>".$row["Entre calle 2"]."</th>"."<th>".$row["Delegacion"]."</th>"."<th>".$row["Barrio"]."</th>";
                               }
-                          } else {
-                              echo "0 results";
                           }
                           $conn->close();
                   ?>
