@@ -26,6 +26,7 @@ $row = mysqli_fetch_assoc($conn->query($sql));
         $_SESSION['loggedin'] = true;
         $_SESSION['nombre'] = $row['nombre'];
         $_SESSION['apellido'] = $row['apellido'];
+        $_SESSION['rol'] = $row['idtipousuario'];
         $_SESSION['start'] = time();
         $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
 
@@ -33,16 +34,9 @@ $row = mysqli_fetch_assoc($conn->query($sql));
         header('Location: ../administrador/index.php');
       }
       else{
-        echo '
-          <center>
-          <h1>EMAIL O CONTRASEÑA INCORRECTA</h1>
-
-       <p><a href="../usr/index.html"><div class="contbtn">
-            <button  type="submit" class="btn" id="btningresar"  autofocus>
-                Ingresar
-            </button>
-  </center>
-        </div></a></p></div>';
+        echo "<script>alert('Email o contraseña incorrecta');
+        location.href='./../';
+        </script>";
       }
 
  }
@@ -51,23 +45,16 @@ $row = mysqli_fetch_assoc($conn->query($sql));
      $_SESSION['loggedin'] = true;
      $_SESSION['nombre'] = $row['nombre'];
      $_SESSION['apellido'] = $row['apellido'];
+       $_SESSION['rol'] = $row['idtipousuario'];
      $_SESSION['start'] = time();
      $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
 
 
      header('Location: ../coordinador');
    }else{
-     echo '
-       <center>
-       <h1>EMAIL O CONTRASEÑA INCORRECTA</h1>
-
-
-    <p><a href="../usr/index.html"><div class="contbtn">
-         <button  type="submit" class="btn" id="btningresar"  autofocus>
-             Ingresar
-         </button>
-</center>
-     </div></a></p></div>';
+     echo "<script>alert('Email o contraseña incorrecta');
+     location.href='./../';
+     </script>";
    }
 }
  else if($row['idtipousuario'] == 3) {
@@ -75,22 +62,16 @@ $row = mysqli_fetch_assoc($conn->query($sql));
      $_SESSION['loggedin'] = true;
      $_SESSION['nombre'] = $row['nombre'];
      $_SESSION['apellido'] = $row['apellido'];
+       $_SESSION['rol'] = $row['idtipousuario'];
      $_SESSION['start'] = time();
      $_SESSION['expire'] = $_SESSION['start'] + (20 * 60);
 
 
      header('Location: ../referente');
    }else{
-     echo '
-       <center>
-       <h1>EMAIL O CONTRASEÑA INCORRECTA</h1>
-
-    <p><a href="../usr/index.html"><div class="contbtn">
-         <button  type="submit" class="btn" id="btningresar"  autofocus>
-             Ingresar
-         </button>
- </center>
-     </div></a></p></div>';
+     echo "<script>alert('Email o contraseña incorrecta');
+     location.href='./../';
+     </script>";
    }
  }
 
