@@ -314,7 +314,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
         <div class="modal-body">¿Está seguro de que quiere cerrar la sesión?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="../index.html">Cerrar sesión</a>
+          <a class="btn btn-primary" href="../cerrarsession.php">Cerrar sesión</a>
         </div>
       </div>
     </div>
