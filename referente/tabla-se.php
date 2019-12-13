@@ -3,6 +3,26 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');
+  location.href='./../';
+  </script>";
+  exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <head>
 
   <meta charset="utf-8">
@@ -13,16 +33,19 @@
 
   <title>Tablas</title>
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/escudo.png">
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/escudo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body id="page-top">
@@ -71,11 +94,6 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="se-register.php">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Nuevo Servicio Educativo</span></a>
-      </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -123,17 +141,6 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -181,19 +188,6 @@
                 </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Perfil
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Opciones
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Salir
@@ -236,17 +230,17 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>id-tipo-se</th>
+                      <th>ID tipo se</th>
                       <th>Autoridad</th>
                       <th>Nivel</th>
                       <th>Numero</th>
                       <th>Nombre</th>
-                      <th>id-director</th>
-                      <th>id-usuario</th>
-                      <th>calle</th>
-                      <th>delegación</th>
-                      <th>barrio</th>
-
+                      <th>ID usuario</th>
+                      <th>ID director</th>
+                      <th>Calle</th>
+                      <th>Delegación</th>
+                      <th>Barrio</th>
+                      <th>Telefono</th>
                     </tr>
                   </thead>
                   <?php
@@ -261,16 +255,15 @@
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM tipo se";
+                          $sql = "SELECT * FROM servicioeducativo";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><th>".$row["ID Tipo SE"]."</th>"."<th>".$row["Autoridad"]."</th>"."<th>".$row["Nivel"]."</th>"."<th>".$row["Número"]."</th>"."<th>".$row["Nombre"]."</th>"."<th>".$row["ID Usuario"]."</th>"."<th>".$row["Telefono"]."</th>"."<th>".$row["Direccion"]."</th>"."<th>".$row["Entrecalle 1"]."</th>"."<th>".$row["Entre calle 2"]."</th>"."<th>".$row["Delegacion"]."</th>"."<th>".$row["Barrio"]."</th>";
+                                  echo "<tr><td>".$row["tipo se"]."</td>"."<td>".$row["autoridad"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["ID Usuario"]."</td>".
+                                  $row["iddirector"]."</td>"."<td>".$row["direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["telefono"]."</td></tr>";
                               }
-                          } else {
-                              echo "0 results";
                           }
                           $conn->close();
                   ?>
@@ -319,7 +312,7 @@
         <div class="modal-body">¿Está seguro de que quiere cerrar la sesión?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="../index.html">Cerrar sesión</a>
+          <a class="btn btn-primary" href="../cerrarsession.php">Cerrar sesión</a>
         </div>
       </div>
     </div>

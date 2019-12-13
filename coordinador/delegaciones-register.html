@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<?php
-  session_start();
-?>
+
 <html lang="en">
 
 <head>
@@ -12,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Barrio - Municipio de Lomas de Zamora</title>
+  <title>Delegaciones - Municipio de Lomas de Zamora</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -35,26 +33,19 @@
 
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Registra tu Barrio</h1>
+                <h1 class="h4 text-gray-900 mb-4">Delegaciones del municipio</h1>
               </div>
-              <form class="user" method="post">
+              <form class="user" method="post" action="delegaciones-register.php">
 
-                  <br>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Barrio">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Calle">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Direción">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="nombredirector" placeholder="Delegación">
-                </div>
-                <a href="./" class="btn btn-primary btn-user btn-block">
-                  Registrar Barrio
-                </a>
+
+
+                                <div class="form-group">
+                                  <input type="text" name="iddelegacion" class="form-control form-control-user" id="exampleInputEmail" placeholder="ID Delegación">
+                                </div>
+                                <div class="form-group">
+                                  <input type="text" name="descripcion" class="form-control form-control-user" id="exampleInputEmail" placeholder="Descripción">
+                                </div>
+              <input type="submit" value='Registrar Delegación' class="btn btn-primary btn-user btn-block">
 
               </form>
 

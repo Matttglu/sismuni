@@ -30,11 +30,17 @@
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
-					<?php if($resultado) { ?>
-						<h3>REGISTRO MODIFICADO</h3>
-						<?php } else { ?>
-						<h3>ERROR AL MODIFICAR</h3>
-					<?php } ?>
+					<?php if($resultado) {
+			  echo'<script type="text/javascript">
+						      alert("Modificado correctamente");
+						      window.location.href="tabla-usuarios.php";
+						      </script>';
+					 } else {
+						 echo'<script type="text/javascript">
+ 					      alert("Error al modificar");
+ 					      window.location.href="tabla-usuarios.php";
+ 					      </script>';
+} ?>
 
 					<a href="index.php" class="btn btn-primary">Regresar</a>
 

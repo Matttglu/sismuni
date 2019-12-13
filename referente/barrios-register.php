@@ -12,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Barrios - Municipio de Lomas de Zamora</title>
+  <title>Barrio - Municipio de Lomas de Zamora</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +26,7 @@
 
 <body class="bg-gradient-primary">
 
-<div class="container">
+  <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
@@ -35,24 +35,30 @@
 
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Registra tu barrio</h1>
+                <h1 class="h4 text-gray-900 mb-4">Registra tu Barrio</h1>
               </div>
               <form class="user" method="post">
-                <h3>Barrio</h3>
+
+                  <br>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="idbarrio" placeholder="Idbarrio">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Barrio">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="localidad" placeholder="Localidad">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Calle">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="" class="form-control form-control-user" id="iddelegacion" placeholder="Idelegacion">
+                  <input type="text" name="" class="form-control form-control-user" id="exampleInputEmail" placeholder="Direción">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="" class="form-control form-control-user" id="nombredirector" placeholder="Delegación">
                 </div>
                 <a href="./" class="btn btn-primary btn-user btn-block">
                   Registrar Barrio
                 </a>
 
               </form>
+
+
             </div>
 
         </div>
