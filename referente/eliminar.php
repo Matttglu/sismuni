@@ -22,11 +22,11 @@
 	 <?php
 			require 'conexion.php';
 
-			$idusuario = $_GET['idusuario'];
+			$idusuario = $_GET['idse'];
 
-			$sql = "DELETE FROM usuarios WHERE idusuario = '$idusuario'";
+			$sql = "DELETE FROM servicioeducativo WHERE idse = '$idse'";
 			$resultado = $conn->query($sql);
 		?>
-		location.href='tabla-usuarios.php';
+		location.href='tabla-se.php';
 	};
 </script>
