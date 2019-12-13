@@ -199,7 +199,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-          <a href="#" class="btn btn-info btn-icon-split">
+          <a href="excel-se.php" class="btn btn-info btn-icon-split">
                               <span class="icon text-white-50">
                                 <i class="fas fa-info-circle"></i>
                               </span>
@@ -228,12 +228,12 @@
                       <th>Nivel</th>
                       <th>Numero</th>
                       <th>Nombre</th>
-                      <th>id-director</th>
                       <th>id-usuario</th>
+                      <th>id-director</th>
                       <th>calle</th>
                       <th>delegación</th>
                       <th>barrio</th>
-
+                      <th>telefono</th>
                     </tr>
                   </thead>
                   <?php
@@ -254,7 +254,8 @@
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><th>".$row["ID Tipo SE"]."</th>"."<th>".$row["Autoridad"]."</th>"."<th>".$row["Nivel"]."</th>"."<th>".$row["Número"]."</th>"."<th>".$row["Nombre"]."</th>"."<th>".$row["ID Usuario"]."</th>"."<th>".$row["Telefono"]."</th>"."<th>".$row["Direccion"]."</th>"."<th>".$row["Entrecalle 1"]."</th>"."<th>".$row["Entre calle 2"]."</th>"."<th>".$row["Delegacion"]."</th>"."<th>".$row["Barrio"]."</th>";
+                                  echo "<tr><th>".$row["tipo se"]."</th>"."<th>".$row["autoridad"]."</th>"."<th>".$row["nivel"]."</th>"."<th>".$row["numero"]."</th>"."<th>".$row["nombre"]."</th>"."<th>".$row["ID Usuario"]."</th>".
+                                  $row["iddirector"]."</th>"."<th>".$row["direccion"]."</th>"."<th>".$row["iddelegacion"]."</th>"."<th>".$row["idbarrio"]."</th>"."<th>".$row["telefono"]."</th></tr>";
                               }
                           }
                           $conn->close();

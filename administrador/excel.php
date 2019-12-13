@@ -9,19 +9,19 @@
 
 <table border="1">
 	<tr style="background-color:red;">
-		<th>Codigo</th>
-		<th>Nombres</th>
-		<th>Apellidos</th>
-		<th>Telefono</th>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Rol</th>
+		<th>Email</th>
 	</tr>
 	<?php
 		while ($row=mysqli_fetch_assoc($result)) {
 			?>
 				<tr>
-              <td><?php echo $row['nombre'];?></td>
-              <td><?php echo $row['apellido'];?></td>
-              <td><?php echo $row['rol'];?></td>
-              <td><?php echo $row['email'];?></td>
+					<td><?php echo $row['nombr'];?></td>
+					<td><?php echo $row['apellido'];?></td>
+					<td><?php echo $row['rol'];?></td>
+					<td><?php echo $row['email'];?></td>
 				</tr>
 
 			<?php

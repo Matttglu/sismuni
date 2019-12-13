@@ -196,7 +196,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-          <a href="#" class="btn btn-info btn-icon-split">
+          <a href="excel-barrios.php" class="btn btn-info btn-icon-split">
                               <span class="icon text-white-50">
                                 <i class="fas fa-info-circle"></i>
                               </span>
@@ -245,7 +245,7 @@
                               while($row = $result->fetch_assoc()) {
                                   echo "<tr><th>".$row["idbarrio"]."</th>"."<th>".$row["iddelegacion"]."</th>"."<th>".$row["descripcion"]."</th>";
                               }
-                          } 
+                          }
                           $conn->close();
                   ?>
                 </table>
