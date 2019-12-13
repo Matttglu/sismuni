@@ -3,6 +3,25 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');</script>";
+    header('Location:./../');
+    exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <head>
 
   <meta charset="utf-8">
@@ -224,12 +243,12 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>nombre</th>
-                      <th>apellido</th>
-                      <th>tipousuario</th>
-                      <th>email</th>
-                      <th></th>
-                      <th></th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Tipo de usuario</th>
+                      <th>Email</th>
+                      <th width="5%"></th>
+                      <th width="5%"></th>
                     </tr>
                   </thead>
             <?php

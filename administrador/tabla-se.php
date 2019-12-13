@@ -3,6 +3,25 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');</script>";
+    header('Location:./../');
+    exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <head>
 
   <meta charset="utf-8">
@@ -223,17 +242,17 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>id-tipo-se</th>
+                      <th>ID tipo se</th>
                       <th>Autoridad</th>
                       <th>Nivel</th>
                       <th>Numero</th>
                       <th>Nombre</th>
-                      <th>id-usuario</th>
-                      <th>id-director</th>
-                      <th>calle</th>
-                      <th>delegación</th>
-                      <th>barrio</th>
-                      <th>telefono</th>
+                      <th>ID usuario</th>
+                      <th>ID director</th>
+                      <th>Calle</th>
+                      <th>Delegación</th>
+                      <th>Barrio</th>
+                      <th>Telefono</th>
                     </tr>
                   </thead>
                   <?php
@@ -254,8 +273,8 @@
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><th>".$row["tipo se"]."</th>"."<th>".$row["autoridad"]."</th>"."<th>".$row["nivel"]."</th>"."<th>".$row["numero"]."</th>"."<th>".$row["nombre"]."</th>"."<th>".$row["ID Usuario"]."</th>".
-                                  $row["iddirector"]."</th>"."<th>".$row["direccion"]."</th>"."<th>".$row["iddelegacion"]."</th>"."<th>".$row["idbarrio"]."</th>"."<th>".$row["telefono"]."</th></tr>";
+                                  echo "<tr><td>".$row["tipo se"]."</td>"."<td>".$row["autoridad"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["ID Usuario"]."</td>".
+                                  $row["iddirector"]."</td>"."<td>".$row["direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["telefono"]."</td></tr>";
                               }
                           }
                           $conn->close();

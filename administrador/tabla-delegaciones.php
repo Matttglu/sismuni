@@ -3,6 +3,25 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');</script>";
+    header('Location:./../');
+    exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <head>
 
   <meta charset="utf-8">
@@ -222,8 +241,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>iddelegacion</th>
-                      <th>descripcion</th>
+                      <th>ID delegacion</th>
+                      <th>Descripcion</th>
                     </tr>
                   </thead>
                   <?php
@@ -244,7 +263,7 @@
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><th>".$row["iddelegacion"]."</th>"."<th>".$row["descripcion"]."</th>";
+                                  echo "<tr><td>".$row["iddelegacion"]."</td>"."<td>".$row["descripcion"]."</td>";
                               }
                           }
                           $conn->close();

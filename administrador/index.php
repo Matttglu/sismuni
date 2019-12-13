@@ -2,6 +2,25 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');</script>";
+    header('Location:./../');
+    exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <html lang="en">
 
 <head>

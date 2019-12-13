@@ -2,6 +2,25 @@
 <?php
   session_start();
 ?>
+<?php
+
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{
+
+} else {
+  echo "<script>alert('No ah iniciado sesión');</script>";
+    header('Location:./../');
+    exit;
+}
+    // checking the time now when home page starts
+    $now = time();
+    if ($now > $_SESSION['expire'] )
+    {
+        header('Location:./../cerrarsession.php');;
+        exit;
+    }
+?>
 <html lang="en">
 
 <head>
@@ -245,7 +264,7 @@
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><th>".$row["apellido"]."</th>"."<th>".$row["nombre"]."</th>"."<th>".$row["celular"]."</th>"."<th>".$row["celular2"]."</th>"."<th>".$row["email"]."</th>"."<th>".$row["fechadesde"]."</th>"."<th>".$row["observaciones"]."</th></tr>";
+                                  echo "<tr><td>".$row["apellido"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["celular"]."</td>"."<td>".$row["celular2"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["fechadesde"]."</td>"."<td>".$row["observaciones"]."</td></tr>";
                               }
                           }
                           $conn->close();
