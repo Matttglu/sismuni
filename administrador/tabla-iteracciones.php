@@ -220,13 +220,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-          <a href="#" class="btn btn-info btn-icon-split">
+          <a href="excel-inte.php" class="btn btn-info btn-icon-split">
                               <span class="icon text-white-50">
                                 <i class="fas fa-info-circle"></i>
                               </span>
                               <span class="text">Exportar</span>
                             </a>
-          <a href="#" class="btn btn-success btn-icon-split">
+          <a href="interacciones-register.html" class="btn btn-success btn-icon-split">
                               <span class="icon text-white-50">
                                 <i class="fas fa-check"></i>
                               </span>
