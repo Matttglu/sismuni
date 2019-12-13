@@ -10,9 +10,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
 {
 
 } else {
-  echo "<script>alert('No ah iniciado sesión');</script>";
-    header('Location:./../');
-    exit;
+  echo "<script>alert('No ah iniciado sesión');
+  location.href='./../';
+  </script>";
+  exit;
 }
     // checking the time now when home page starts
     $now = time();
