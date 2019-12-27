@@ -32,6 +32,21 @@ if ($count == 1) {
 
 
 } else {
+  if ($tipo=3){
+    $sql = "INSERT INTO referentes (nombre, apellido, email, idtipousuario, password )
+    VALUES ('". $nombre ."','". $apellido . "','". $email . "','". $tipo . "','". $hash . "')";
+
+    if ($conn->query($sql) === TRUE) {
+      echo'<script type="text/javascript">
+            alert("Usuario creado correctamente");
+            window.location.href="index.php";
+            </script>';
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  }else{
+
+
 $sql = "INSERT INTO usuarios (nombre, apellido, email, idtipousuario, password )
 VALUES ('". $nombre ."','". $apellido . "','". $email . "','". $tipo . "','". $hash . "')";
 
@@ -42,6 +57,7 @@ if ($conn->query($sql) === TRUE) {
         </script>';
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
+}
 }
 }
 $conn->close();
