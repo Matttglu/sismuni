@@ -18,7 +18,7 @@
 		while ($row=mysqli_fetch_assoc($result)) {
 			?>
 				<tr>
-					<td><?php echo $row['nombr'];?></td>
+					<td><?php echo $row['nombre'];?></td>
 					<td><?php echo $row['apellido'];?></td>
 					<td><?php echo $row['rol'];?></td>
 					<td><?php echo $row['email'];?></td>
