@@ -230,6 +230,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>Tipo de SE</th>
                       <th>Nombre</th>
                       <th>Director</th>
                       <th>Nivel</th>
@@ -254,13 +255,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM servicioeducativo inner join usuarios on servicioeducativo.idusuario=usuarios.idusuario inner join director on servicioeducativo.iddirector=director.iddirector";
+                          $sql = "SELECT * FROM servicioeducativo inner join tipose on servicioeducativo.tipose=tipose.idtipo inner join usuarios on servicioeducativo.idusuario=usuarios.idusuario inner join director on servicioeducativo.iddirector=director.iddirector";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr>"."<td>".$row["nombre"]."</td>"."<td>".$row["director.nombre"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["usuario.nombre"]."</td>".
+                                  echo "<tr>"."<td>".$row["tipose.tipose"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["director.nombre"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["usuario.nombre"]."</td>".
                                   $row["autoridad"]."</td>"."<td>".$row["direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["telefono"]."</td></tr>";
                               }
                           }

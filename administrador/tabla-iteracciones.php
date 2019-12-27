@@ -231,9 +231,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>ID estado</th>
-                      <th>Pendiente</th>
-                      <th>Resuelto</th>
+                    <th>Nro de interaccion</th>
+                    <th>idse</th>
+                    <th>idtipodeinteraccion</th>
+                    <th>idresponsable</th>
+                    <th>estado</th>
+                    <th>observacion</th>
+                    <th>fechainteraccion</th>
                     </tr>
                   </thead>
                    <?php
@@ -248,15 +252,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM interacciones";
+                          $sql = "SELECT * FROM interacciones inner join servicioeducativo on interacciones.idse=servicioeducativo.idse  inner join tiposdeinteracciones on interacciones.idtipodeinteraccion=tiposdeinteracciones.idtipodeinteraccion inner join referentes on interacciones.idresponsable=referentes.idusuario";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><td>".$row["idestado"]."</td>"."<td>".$row["pendiente"]."</td>"."<td>".$row["resuelto"]."</td>";
+                                  echo "<tr>"."<td>".$row["idinteraccion"]."</td>"."<td>".$row["servicioeducativo.nombre"]."</td>"."<td>".$row["tiposdeinteracciones.tipodeinteraccion"]."</td>"."<td>".$row["referentes.nombre"]."</td>"."<td>".$row["estado"]."</td>"."<td>".$row["observacion"]."</td>"."<td>".$row["fechadeinteraccion"]."</td>";
                               }
                           }
+
                           $conn->close();
                   ?>
                 </table>

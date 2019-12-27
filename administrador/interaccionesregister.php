@@ -1,7 +1,29 @@
 <!DOCTYPE html>
-
+<?php
+require ('conexion.php');
+ ?>
 <html lang="en">
+<script language="javascript" src="js/js.js"></script>
+   <script language="javascript">
+			$(document).ready(function(){
+				$("#tipose").change(function () {
 
+			//		$('#tipose').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
+
+					$("#tipose option:selected").each(function () {
+						se = $(this).val();
+						$.post("getse.php", { se: se }, function(data){
+							$("#se").html(data);
+						});
+					});
+				});
+			});
+      //"<br />
+    //  <b>Parse error</b>:  syntax error, unexpected '$se' (T_VARIABLE) in <b>D:\xampp\htdocs\sistema1\administrador\getse.php</b> on line <b>6</b><br />  "
+  //  "<br />
+//    <b>Notice</b>:  Undefined index: tipose.tipose in <b>D:\xampp\htdocs\sistema1\administrador\getse.php</b> on line <b>13</b><br />
+  //  <option value='0'>Seleccionar Municipio</option><option value=''></option>"
+  	</script>
 <head>
 
   <meta charset="utf-8">
@@ -40,16 +62,23 @@
 
                                   <div>
                                     <label>Tipo Servicio Educativo:</label>
-                                    <select name="tiposse" id="cusSelectbox">
-                                          <option value="Jardines-de-Infantes-Provinciales">Jardines de Infantes Provinciales</option>
-                                          <option value="Jardines-de-Infantes-Municipales">Jardines de Infantes Municipales</option>
-                                          <option value="Escuela-Nivel-Primario">Escuela Nivel Primario</option>
-                                          <option value="Escuela-Nivel-Secundario">Escuela Nivel Secundario</option>
-                                          <option value="Escuela-Nivel-Adultos">Escuela Nivel Adultos</option>
-                                          <option value="CENS">CENS</option>
-                                          <option value="CPII">CPII</option>
-                                          <option value="Fines">Fines</option>
-                                          <option value="Escuela Municipal">Escuela Municipal</option>
+                                    <select name="tiposse" id="tipose">
+                                          <option></option>
+                                          <option value="1">Jardines de Infantes Provinciales</option>
+                                          <option value="2">Jardines de Infantes Municipales</option>
+                                          <option value="3">Escuela Nivel Primario</option>
+                                          <option value="4">Escuela Nivel Secundario</option>
+                                          <option value="5">Escuela Nivel Adultos</option>
+                                          <option value="6">CENS</option>
+                                          <option value="7">CPII</option>
+                                          <option value="8">Fines</option>
+                                          <option value="9">Escuela Municipal</option>
+                                    </select>
+                                  </div>
+
+                                    <label>Elegi</label>
+                                    <select id="se">
+
                                     </select>
                                   </div>
                                   <br>

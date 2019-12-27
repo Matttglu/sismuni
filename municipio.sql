@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-12-2019 a las 20:49:24
+-- Tiempo de generación: 27-12-2019 a las 23:18:51
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 5.6.38
 
@@ -30,9 +30,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barrios` (
   `idbarrio` int(11) NOT NULL,
-  `iddelegacion` varchar(11) COLLATE utf32_spanish_ci NOT NULL,
-  `descripcion` varchar(40) COLLATE utf32_spanish_ci NOT NULL
+  `iddelegacion` int(11) NOT NULL,
+  `descripción` varchar(50) COLLATE utf32_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `barrios`
+--
+
+INSERT INTO `barrios` (`idbarrio`, `iddelegacion`, `descripción`) VALUES
+(1, 1, 'all boys');
 
 -- --------------------------------------------------------
 
@@ -44,6 +51,13 @@ CREATE TABLE `delegaciones` (
   `iddelegacion` int(40) NOT NULL,
   `descripcion` varchar(40) COLLATE utf32_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `delegaciones`
+--
+
+INSERT INTO `delegaciones` (`iddelegacion`, `descripcion`) VALUES
+(1, 'newels');
 
 -- --------------------------------------------------------
 
@@ -63,16 +77,12 @@ CREATE TABLE `director` (
   `observaciones` varchar(100) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `estadosinteracciones`
+-- Volcado de datos para la tabla `director`
 --
 
-CREATE TABLE `estadosinteracciones` (
-  `idestado` int(11) NOT NULL,
-  `estado` varchar(50) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+INSERT INTO `director` (`iddirector`, `nombre`, `apellido`, `celular`, `celular2`, `email`, `foto`, `fechadesde`, `observaciones`) VALUES
+(1, 'wadaw', 'sdsds', 312321, 312312, 'root', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -82,12 +92,13 @@ CREATE TABLE `estadosinteracciones` (
 
 CREATE TABLE `interacciones` (
   `idinteraccion` int(11) NOT NULL,
-  `id tipo se` int(11) NOT NULL,
+  `idse` int(11) NOT NULL,
   `idtipodeinteraccion` int(11) NOT NULL,
   `idresponsable` int(11) NOT NULL,
   `idestado` int(11) NOT NULL,
   `observacion` varchar(100) COLLATE utf32_spanish_ci NOT NULL,
-  `fechainteraccion` varchar(10) COLLATE utf32_spanish_ci NOT NULL
+  `fechainteraccion` varchar(10) COLLATE utf32_spanish_ci NOT NULL,
+  `estado` varchar(40) COLLATE utf32_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
 
 -- --------------------------------------------------------
@@ -115,7 +126,7 @@ CREATE TABLE `referentes` (
 
 CREATE TABLE `servicioeducativo` (
   `idse` int(11) NOT NULL,
-  `tipo se` int(11) NOT NULL,
+  `tipose` int(11) NOT NULL,
   `Autoridad` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `Nivel` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `Numero` int(11) NOT NULL,
@@ -130,6 +141,14 @@ CREATE TABLE `servicioeducativo` (
   `mail` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `iddirector` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `servicioeducativo`
+--
+
+INSERT INTO `servicioeducativo` (`idse`, `tipose`, `Autoridad`, `Nivel`, `Numero`, `Nombre`, `idusuario`, `Telefono`, `Direccion`, `Entrecalle 1`, `Entre calle 2`, `iddelegacion`, `idbarrio`, `mail`, `iddirector`) VALUES
+(4, 1, 'awda', 'awdwdaw', 11, 'dwawdwa', 5, 3543453, 'jgyjgj', 'jtfhjfth', 'hfthft', 1, 1, 'fawfdawdf', 1),
+(5, 1, 'awda', 'awdwdaw', 11, 'dawdawddawddawdaw', 2, 3543453, 'jgyjgj', 'jtfhjfth', 'hfthft', 1, 1, 'awdwwd', 1);
 
 -- --------------------------------------------------------
 
@@ -189,6 +208,21 @@ CREATE TABLE `tipose` (
   `tipose` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tipose`
+--
+
+INSERT INTO `tipose` (`idtipo`, `tipose`) VALUES
+(6, 'CENS'),
+(7, 'CPII'),
+(9, 'Escuela Municipal'),
+(5, 'Escuela Nivel Adultos'),
+(3, 'Escuela Nivel Primario'),
+(4, 'Escuela Nivel Secundario'),
+(8, 'Fines'),
+(2, 'Jardines de Infantes Municipales'),
+(1, 'Jardines de Infantes Provinciales');
+
 -- --------------------------------------------------------
 
 --
@@ -225,9 +259,7 @@ INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellido`, `idtipousuario`, `ema
 --
 ALTER TABLE `barrios`
   ADD PRIMARY KEY (`idbarrio`),
-  ADD KEY `iddelegacion` (`iddelegacion`),
-  ADD KEY `iddelegacion_2` (`iddelegacion`),
-  ADD KEY `iddelegacion_3` (`iddelegacion`);
+  ADD KEY `iddelegacion` (`iddelegacion`);
 
 --
 -- Indices de la tabla `delegaciones`
@@ -242,17 +274,11 @@ ALTER TABLE `director`
   ADD PRIMARY KEY (`iddirector`);
 
 --
--- Indices de la tabla `estadosinteracciones`
---
-ALTER TABLE `estadosinteracciones`
-  ADD PRIMARY KEY (`idestado`);
-
---
 -- Indices de la tabla `interacciones`
 --
 ALTER TABLE `interacciones`
   ADD PRIMARY KEY (`idinteraccion`),
-  ADD KEY `id tipo se` (`id tipo se`),
+  ADD KEY `id tipo se` (`idse`),
   ADD KEY `idtipodeiteracion` (`idtipodeinteraccion`),
   ADD KEY `idresponsable` (`idresponsable`),
   ADD KEY `idestado` (`idestado`);
@@ -272,7 +298,7 @@ ALTER TABLE `servicioeducativo`
   ADD KEY `iddelegacion` (`iddelegacion`),
   ADD KEY `idbarrio` (`idbarrio`),
   ADD KEY `ID Usuario` (`idusuario`),
-  ADD KEY `tipo se` (`tipo se`),
+  ADD KEY `tipo se` (`tipose`),
   ADD KEY `idbarrio_2` (`idbarrio`),
   ADD KEY `iddirector` (`iddirector`);
 
@@ -310,19 +336,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `barrios`
 --
 ALTER TABLE `barrios`
-  MODIFY `idbarrio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idbarrio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `delegaciones`
 --
 ALTER TABLE `delegaciones`
-  MODIFY `iddelegacion` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `iddelegacion` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `director`
 --
 ALTER TABLE `director`
-  MODIFY `iddirector` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `iddirector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `interacciones`
@@ -340,7 +366,7 @@ ALTER TABLE `referentes`
 -- AUTO_INCREMENT de la tabla `servicioeducativo`
 --
 ALTER TABLE `servicioeducativo`
-  MODIFY `idse` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tiposdeinteracciones`
@@ -352,7 +378,7 @@ ALTER TABLE `tiposdeinteracciones`
 -- AUTO_INCREMENT de la tabla `tipose`
 --
 ALTER TABLE `tipose`
-  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -365,12 +391,19 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- Filtros para la tabla `barrios`
+--
+ALTER TABLE `barrios`
+  ADD CONSTRAINT `barrios_ibfk_1` FOREIGN KEY (`iddelegacion`) REFERENCES `delegaciones` (`iddelegacion`);
+
+--
 -- Filtros para la tabla `interacciones`
 --
 ALTER TABLE `interacciones`
   ADD CONSTRAINT `interacciones_ibfk_1` FOREIGN KEY (`idestado`) REFERENCES `estadosinteracciones` (`idestado`),
   ADD CONSTRAINT `interacciones_ibfk_2` FOREIGN KEY (`idtipodeinteraccion`) REFERENCES `tiposdeinteracciones` (`idtipodeinteraccion`),
-  ADD CONSTRAINT `interacciones_ibfk_3` FOREIGN KEY (`idresponsable`) REFERENCES `usuarios` (`idusuario`);
+  ADD CONSTRAINT `interacciones_ibfk_3` FOREIGN KEY (`idresponsable`) REFERENCES `usuarios` (`idusuario`),
+  ADD CONSTRAINT `interacciones_ibfk_4` FOREIGN KEY (`idse`) REFERENCES `servicioeducativo` (`idse`);
 
 --
 -- Filtros para la tabla `servicioeducativo`
@@ -379,7 +412,7 @@ ALTER TABLE `servicioeducativo`
   ADD CONSTRAINT `servicioeducativo_ibfk_1` FOREIGN KEY (`iddelegacion`) REFERENCES `delegaciones` (`iddelegacion`),
   ADD CONSTRAINT `servicioeducativo_ibfk_2` FOREIGN KEY (`idbarrio`) REFERENCES `barrios` (`idbarrio`),
   ADD CONSTRAINT `servicioeducativo_ibfk_4` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`),
-  ADD CONSTRAINT `servicioeducativo_ibfk_5` FOREIGN KEY (`tipo se`) REFERENCES `tipose` (`idtipo`),
+  ADD CONSTRAINT `servicioeducativo_ibfk_5` FOREIGN KEY (`tipose`) REFERENCES `tipose` (`idtipo`),
   ADD CONSTRAINT `servicioeducativo_ibfk_6` FOREIGN KEY (`iddirector`) REFERENCES `director` (`iddirector`);
 
 --
