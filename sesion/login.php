@@ -18,9 +18,8 @@ $sql = "select nombre,apellido,id from usuarios where nombre='". $nombre ."'";
 $row = mysqli_fetch_assoc($conn->query($sql));
  $tipo = $row['id'];
  */
- 	$result = mysqli_query($conn, "SELECT * FROM usuarios WHERE email = '$email'");
+ 	$result = mysqli_query($conn, "SELECT * FROM usuarios referentes WHERE email = '$email'");
 	$row = mysqli_fetch_assoc($result);
-
   if($row['idtipousuario'] == 1){
       if (password_verify($pass,$row['password'])){
         $_SESSION['loggedin'] = true;
