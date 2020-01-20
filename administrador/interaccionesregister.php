@@ -73,7 +73,7 @@ require ('conexion.php');
                                   </div>
 
                                     <label>Elegi</label>
-                                    <select id="se">
+                                    <select name="idse" id="se">
 
                                     </select>
                                   </div>

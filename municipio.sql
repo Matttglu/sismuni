@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-01-2020 a las 19:42:31
+-- Tiempo de generación: 20-01-2020 a las 20:20:38
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 5.6.38
 
@@ -95,7 +95,6 @@ CREATE TABLE `interacciones` (
   `idse` int(11) NOT NULL,
   `idtipodeinteraccion` int(11) NOT NULL,
   `idresponsable` int(11) NOT NULL,
-  `idestado` int(11) NOT NULL,
   `observacion` varchar(100) COLLATE utf32_spanish_ci NOT NULL,
   `fechainteraccion` varchar(10) COLLATE utf32_spanish_ci NOT NULL,
   `estado` varchar(40) COLLATE utf32_spanish_ci NOT NULL
@@ -287,8 +286,7 @@ ALTER TABLE `interacciones`
   ADD PRIMARY KEY (`idinteraccion`),
   ADD KEY `id tipo se` (`idse`),
   ADD KEY `idtipodeiteracion` (`idtipodeinteraccion`),
-  ADD KEY `idresponsable` (`idresponsable`),
-  ADD KEY `idestado` (`idestado`);
+  ADD KEY `idresponsable` (`idresponsable`);
 
 --
 -- Indices de la tabla `referentes`
@@ -361,7 +359,7 @@ ALTER TABLE `director`
 -- AUTO_INCREMENT de la tabla `interacciones`
 --
 ALTER TABLE `interacciones`
-  MODIFY `idinteraccion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idinteraccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `referentes`
@@ -407,7 +405,6 @@ ALTER TABLE `barrios`
 -- Filtros para la tabla `interacciones`
 --
 ALTER TABLE `interacciones`
-  ADD CONSTRAINT `interacciones_ibfk_1` FOREIGN KEY (`idestado`) REFERENCES `estadosinteracciones` (`idestado`),
   ADD CONSTRAINT `interacciones_ibfk_2` FOREIGN KEY (`idtipodeinteraccion`) REFERENCES `tiposdeinteracciones` (`idtipodeinteraccion`),
   ADD CONSTRAINT `interacciones_ibfk_3` FOREIGN KEY (`idresponsable`) REFERENCES `usuarios` (`idusuario`),
   ADD CONSTRAINT `interacciones_ibfk_4` FOREIGN KEY (`idse`) REFERENCES `servicioeducativo` (`idse`);
