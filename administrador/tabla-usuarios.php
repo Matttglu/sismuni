@@ -242,6 +242,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
             <?php
           require 'conexion.php';
             $sql = "SELECT * FROM usuarios inner join tiposdeusuarios on tiposdeusuarios.idtipousuario=usuarios.idtipousuario";
+              $sql2 = "SELECT * FROM referentes inner join tiposdeusuarios on tiposdeusuarios.idtipousuario=usuarios.idtipousuario";
             $result = $conn->query($sql);
 
        while($row = $result->fetch_array(MYSQLI_ASSOC)) { ?>
@@ -254,6 +255,21 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
              <td><a href="eliminar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fas fa-trash"></span></a></td>
            </tr>
 <?php } ?>
+<?php
+
+  $sql2 = "SELECT * FROM referentes inner join tiposdeusuarios on tiposdeusuarios.idtipousuario=referentes.idtipousuario";
+$result2 = $conn->query($sql2);
+    while($row = $result2->fetch_array(MYSQLI_ASSOC)) { ?>
+  <tr>
+      <td><?php echo $row['nombre'];?></td>
+      <td><?php echo $row['apellido'];?></td>
+      <td><?php echo $row['rol'];?></td>
+      <td><?php echo $row['email'];?></td>
+      <td><a href="modificar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fa fa-edit"></span></a></td>
+      <td><a href="eliminar.php?idusuario=<?php echo $row['idusuario'];?>"><span class="fas fa-trash"></span></a></td>
+    </tr>
+<?php } ?>
+
                 </table>
               </div>
             </div>

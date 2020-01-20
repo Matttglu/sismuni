@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-12-2019 a las 23:18:51
+-- Tiempo de generación: 20-01-2020 a las 19:42:31
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 5.6.38
 
@@ -31,14 +31,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `barrios` (
   `idbarrio` int(11) NOT NULL,
   `iddelegacion` int(11) NOT NULL,
-  `descripción` varchar(50) COLLATE utf32_spanish_ci NOT NULL
+  `descripcion` varchar(50) COLLATE utf32_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `barrios`
 --
 
-INSERT INTO `barrios` (`idbarrio`, `iddelegacion`, `descripción`) VALUES
+INSERT INTO `barrios` (`idbarrio`, `iddelegacion`, `descripcion`) VALUES
 (1, 1, 'all boys');
 
 -- --------------------------------------------------------
@@ -67,7 +67,7 @@ INSERT INTO `delegaciones` (`iddelegacion`, `descripcion`) VALUES
 
 CREATE TABLE `director` (
   `iddirector` int(11) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `nombredi` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `apellido` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `celular` int(11) NOT NULL,
   `celular2` int(11) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `director` (
 -- Volcado de datos para la tabla `director`
 --
 
-INSERT INTO `director` (`iddirector`, `nombre`, `apellido`, `celular`, `celular2`, `email`, `foto`, `fechadesde`, `observaciones`) VALUES
+INSERT INTO `director` (`iddirector`, `nombredi`, `apellido`, `celular`, `celular2`, `email`, `foto`, `fechadesde`, `observaciones`) VALUES
 (1, 'wadaw', 'sdsds', 312321, 312312, 'root', '', '', '');
 
 -- --------------------------------------------------------
@@ -118,6 +118,13 @@ CREATE TABLE `referentes` (
   `idcoordinador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `referentes`
+--
+
+INSERT INTO `referentes` (`idusuario`, `nombre`, `apellido`, `idtipousuario`, `email`, `password`, `fechabaja`, `idcoordinador`) VALUES
+(1, 'Valentin ', 'Gluszczuk', 3, 'valentingluszczuk@gmail.com', '$2y$10$5gxd/d7sA.XZQjySiVHpZ.6.VTNijVJfOGuCiwDUlxQLlw9Hujgfe', '0000-00-00', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -130,7 +137,7 @@ CREATE TABLE `servicioeducativo` (
   `Autoridad` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `Nivel` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `Numero` int(11) NOT NULL,
-  `Nombre` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
+  `Nombrese` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
   `idusuario` int(11) NOT NULL,
   `Telefono` int(11) NOT NULL,
   `Direccion` varchar(50) COLLATE utf32_spanish_ci NOT NULL,
@@ -146,7 +153,7 @@ CREATE TABLE `servicioeducativo` (
 -- Volcado de datos para la tabla `servicioeducativo`
 --
 
-INSERT INTO `servicioeducativo` (`idse`, `tipose`, `Autoridad`, `Nivel`, `Numero`, `Nombre`, `idusuario`, `Telefono`, `Direccion`, `Entrecalle 1`, `Entre calle 2`, `iddelegacion`, `idbarrio`, `mail`, `iddirector`) VALUES
+INSERT INTO `servicioeducativo` (`idse`, `tipose`, `Autoridad`, `Nivel`, `Numero`, `Nombrese`, `idusuario`, `Telefono`, `Direccion`, `Entrecalle 1`, `Entre calle 2`, `iddelegacion`, `idbarrio`, `mail`, `iddirector`) VALUES
 (4, 1, 'awda', 'awdwdaw', 11, 'dwawdwa', 5, 3543453, 'jgyjgj', 'jtfhjfth', 'hfthft', 1, 1, 'fawfdawdf', 1),
 (5, 1, 'awda', 'awdwdaw', 11, 'dawdawddawddawdaw', 2, 3543453, 'jgyjgj', 'jtfhjfth', 'hfthft', 1, 1, 'awdwwd', 1);
 
@@ -360,7 +367,7 @@ ALTER TABLE `interacciones`
 -- AUTO_INCREMENT de la tabla `referentes`
 --
 ALTER TABLE `referentes`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `servicioeducativo`

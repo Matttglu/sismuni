@@ -252,7 +252,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><td>".$row["apellido"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["celular"]."</td>"."<td>".$row["celular2"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["fechadesde"]."</td>"."<td>".$row["observaciones"]."</td></tr>";
+                                  echo "<tr><td>".$row["apellido"]."</td>"."<td>".$row["nombredi"]."</td>"."<td>".$row["celular"]."</td>"."<td>".$row["celular2"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["fechadesde"]."</td>"."<td>".$row["observaciones"]."</td></tr>";
                               }
                           }
                           $conn->close();

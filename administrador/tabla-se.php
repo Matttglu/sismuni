@@ -261,8 +261,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr>"."<td>".$row["tipose.tipose"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["director.nombre"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["usuario.nombre"]."</td>".
-                                  $row["autoridad"]."</td>"."<td>".$row["direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["telefono"]."</td></tr>";
+                                  echo "<tr>"."<td>".$row["tipose"]."</td>"."<td>".$row['Nombrese']."</td>"."<td>".$row["nombredi"]."</td>"."<td>".$row["Nivel"]."</td>"."<td>".$row["Numero"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["Autoridad"]."</td>"."<td>".$row["Direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["Telefono"]."</td></tr>";
                               }
                           }
                           $conn->close();

@@ -18,11 +18,7 @@ require ('conexion.php');
 					});
 				});
 			});
-      //"<br />
-    //  <b>Parse error</b>:  syntax error, unexpected '$se' (T_VARIABLE) in <b>D:\xampp\htdocs\sistema1\administrador\getse.php</b> on line <b>6</b><br />  "
-  //  "<br />
-//    <b>Notice</b>:  Undefined index: tipose.tipose in <b>D:\xampp\htdocs\sistema1\administrador\getse.php</b> on line <b>13</b><br />
-  //  <option value='0'>Seleccionar Municipio</option><option value=''></option>"
+
   	</script>
 <head>
 
