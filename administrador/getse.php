@@ -10,7 +10,7 @@
 
 	while($row = $result->fetch_assoc())
 	{
-	echo "<option value='".$row['idse']."'>".$row['Nombre']."</option>";
+	echo "<option value='".$row['idse']."'>".$row['Nombrese']."</option>";
 	}
 
 ?>

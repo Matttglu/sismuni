@@ -70,6 +70,13 @@ require ('conexion.php');
                                           <option value="8">Fines</option>
                                           <option value="9">Escuela Municipal</option>
                                     </select>
+
+                                  </div>
+                                  <label>Elegi</label>
+                                  <select id="se">
+
+                                  </select>
+                                  <div>
                                   </div>
                                   <label>Tipo de Usuario</label>
                                   <select id="lista1" name="lista1">
@@ -79,10 +86,7 @@ require ('conexion.php');
                                   <br>
                                   <div id="select2lista" name="idresponsable"></div>
 
-                                    <label>Elegi</label>
-                                    <select id="se">
 
-                                    </select>
                                   </div>
                                   <br>
                                   <div>
