@@ -4,9 +4,9 @@
         $password = "";
         $dbname = "municipio";
 
-        $tiposse =$_POST["tiposse"];
+        $idse =$_POST["idse"];
         $tiposinte =$_POST["tiposinte"];
-        $responsable =$_POST["idresponsable"];
+        $responsable =$_POST["idusuario"];
         $estado=$_POST["estado"];
         $observacion=$_POST["observacion"];
         $fechainteraccion=$_POST["fechainteraccion"];
@@ -19,13 +19,13 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "INSERT INTO interacciones (id tipo se, idtipodeinteraccion, idresponsable, idestado, observacion, fechainteraccion)
-        VALUES ('". $tiposse ."','". $tipointe . "','". $responsable . "','". $estado . "','". $observacion . "','". $fechainteraccion . "')";
+        $sql = "INSERT INTO interacciones (idse, idtipodeinteraccion, idresponsable, estado, observacion, fechainteraccion)
+        VALUES ('". $idse . "','". $tiposinte . "','". $responsable . "','". $estado . "','". $observacion . "','". $fechainteraccion . "')";
 
 
 
-        
 
 
+        $result = $conn->query($sql);
         $conn->close();
 ?>

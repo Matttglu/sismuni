@@ -20,6 +20,22 @@ require ('conexion.php');
 			});
 
   	</script>
+    <script language="javascript">
+ 			$(document).ready(function(){
+ 				$("#lista1").change(function () {
+
+ 			//		$('#tipose').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
+
+ 					$("#lista1 option:selected").each(function () {
+ 						select2lista = $(this).val();
+ 						$.post("getinte.php", { select2lista: select2lista }, function(data){
+ 							$("#select2lista").html(data);
+ 						});
+ 					});
+ 				});
+ 			});
+
+   	</script>
 <head>
 
   <meta charset="utf-8">
@@ -73,21 +89,20 @@ require ('conexion.php');
 
                                   </div>
                                   <label>Elegi</label>
-                                  <select id="se">
+                                  <select id="se" name="idse">
 
                                   </select>
-                                  <div>
-                                  </div>
+
                                   <label>Tipo de Usuario</label>
                                   <select id="lista1" name="lista1">
                                       <option value="0">Selecciona una opcion</option>
                                       <option value="3">Referente</option>
                                   </select>
                                   <br>
-                                  <div id="select2lista" name="idresponsable"></div>
+                                  <select id="select2lista" name="idusuario">
 
 
-                                  </div>
+                                </select>
                                   <br>
                                   <div>
                                     <label>Tipo de Interacción:</label>
@@ -103,6 +118,7 @@ require ('conexion.php');
                                     </select>
                                   </div>
                                   <br>
+
                                 <div class="form-group">
                                   <input type="text" name="estado" class="form-control form-control-user" id="exampleInputEmail" placeholder="Estado">
                                 </div>
@@ -124,7 +140,7 @@ require ('conexion.php');
     </div>
 
   </div>
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
         $(document).ready(function(){
           $('#lista1').val(1);
           recargarLista();
@@ -145,7 +161,7 @@ require ('conexion.php');
             }
           });
         }
-  </script>
+  </script>-->
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
