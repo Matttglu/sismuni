@@ -1,7 +1,41 @@
 <!DOCTYPE html>
-
+<?php
+require ('conexion.php');
+ ?>
 <html lang="en">
+<script language="javascript" src="js/js.js"></script>
+   <script language="javascript">
+			$(document).ready(function(){
+				$("#tipose").change(function () {
 
+			//		$('#tipose').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
+
+					$("#tipose option:selected").each(function () {
+						se = $(this).val();
+						$.post("getse.php", { se: se }, function(data){
+							$("#se").html(data);
+						});
+					});
+				});
+			});
+
+  	</script>
+    <script language="javascript">
+ 			$(document).ready(function(){
+ 				$("#lista1").change(function () {
+
+ 			//		$('#tipose').find('option').remove().end().append('<option value="whatever"></option>').val('whatever');
+
+ 					$("#lista1 option:selected").each(function () {
+ 						select2lista = $(this).val();
+ 						$.post("getinte.php", { select2lista: select2lista }, function(data){
+ 							$("#select2lista").html(data);
+ 						});
+ 					});
+ 				});
+ 			});
+
+   	</script>
 <head>
 
   <meta charset="utf-8">
@@ -40,18 +74,35 @@
 
                                   <div>
                                     <label>Tipo Servicio Educativo:</label>
-                                    <select name="tiposse" id="cusSelectbox">
-                                          <option value="Jardines-de-Infantes-Provinciales">Jardines de Infantes Provinciales</option>
-                                          <option value="Jardines-de-Infantes-Municipales">Jardines de Infantes Municipales</option>
-                                          <option value="Escuela-Nivel-Primario">Escuela Nivel Primario</option>
-                                          <option value="Escuela-Nivel-Secundario">Escuela Nivel Secundario</option>
-                                          <option value="Escuela-Nivel-Adultos">Escuela Nivel Adultos</option>
-                                          <option value="CENS">CENS</option>
-                                          <option value="CPII">CPII</option>
-                                          <option value="Fines">Fines</option>
-                                          <option value="Escuela Municipal">Escuela Municipal</option>
+                                    <select name="tiposse" id="tipose">
+                                          <option></option>
+                                          <option value="1">Jardines de Infantes Provinciales</option>
+                                          <option value="2">Jardines de Infantes Municipales</option>
+                                          <option value="3">Escuela Nivel Primario</option>
+                                          <option value="4">Escuela Nivel Secundario</option>
+                                          <option value="5">Escuela Nivel Adultos</option>
+                                          <option value="6">CENS</option>
+                                          <option value="7">CPII</option>
+                                          <option value="8">Fines</option>
+                                          <option value="9">Escuela Municipal</option>
                                     </select>
+
                                   </div>
+                                  <label>Elegi</label>
+                                  <select id="se" name="idse">
+
+                                  </select>
+
+                                  <label>Tipo de Usuario</label>
+                                  <select id="lista1" name="lista1">
+                                      <option value="0">Selecciona una opcion</option>
+                                      <option value="3">Referente</option>
+                                  </select>
+                                  <br>
+                                  <select id="select2lista" name="idusuario">
+
+
+                                </select>
                                   <br>
                                   <div>
                                     <label>Tipo de Interacción:</label>
@@ -67,9 +118,7 @@
                                     </select>
                                   </div>
                                   <br>
-                                <div class="form-group">
-                                  <input type="text" name="idresponsable" class="form-control form-control-user" id="exampleInputEmail" placeholder="Responsable">
-                                </div>
+
                                 <div class="form-group">
                                   <input type="text" name="estado" class="form-control form-control-user" id="exampleInputEmail" placeholder="Estado">
                                 </div>
@@ -91,7 +140,28 @@
     </div>
 
   </div>
+  <!--<script type="text/javascript">
+        $(document).ready(function(){
+          $('#lista1').val(1);
+          recargarLista();
 
+          $('#lista1').change(function(){
+            recargarLista();
+          });
+        })
+      </script>
+      <script type="text/javascript">
+        function recargarLista(){
+          $.ajax({
+            type:"POST",
+            url:"datos.php",
+            data:"idtipousuario=" + $('#lista1').val(),
+            success:function(r){
+              $('#select2lista').html(r);
+            }
+          });
+        }
+  </script>-->
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -101,6 +171,10 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
 
 </body>

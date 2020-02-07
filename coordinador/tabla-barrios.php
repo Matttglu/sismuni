@@ -103,7 +103,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
             <a class="collapse-item" href="tabla-tipousuarios.php">Tipo de usuarios</a>
             <a class="collapse-item" href="tabla-se.php">Sistema Educativos</a>
             <a class="collapse-item" href="tabla-directivos.php">Directivos</a>
-            <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
+            
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
             <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>

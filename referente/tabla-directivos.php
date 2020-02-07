@@ -105,7 +105,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
             <a class="collapse-item" href="tabla-tipousuarios.php">Tipo de usuarios</a>
             <a class="collapse-item" href="tabla-se.php">Sistema Educativos</a>
             <a class="collapse-item" href="tabla-directivos.php">Directivos</a>
-            <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
+            
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
             <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>
@@ -201,18 +201,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tablas</h1>
           <p class="mb-4">Se mostraran todos los datos de la tabla ... </p>
-          <a href="excel-director.php" class="btn btn-info btn-icon-split">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-info-circle"></i>
-                              </span>
-                              <span class="text">Exportar</span>
-                            </a>
-          <a href="#" class="btn btn-success btn-icon-split">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
-                              </span>
-                              <span class="text">Registrar</span>
-                            </a>
+          
           <br>
           <br>
           <!-- DataTales Example -->
@@ -252,7 +241,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><td>".$row["apellido"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["celular"]."</td>"."<td>".$row["celular2"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["fechadesde"]."</td>"."<td>".$row["observaciones"]."</td></tr>";
+                                  echo "<tr><td>".$row["apellido"]."</td>"."<td>".$row["nombredi"]."</td>"."<td>".$row["celular"]."</td>"."<td>".$row["celular2"]."</td>"."<td>".$row["email"]."</td>"."<td>".$row["fechadesde"]."</td>"."<td>".$row["observaciones"]."</td></tr>";
                               }
                           }
                           $conn->close();

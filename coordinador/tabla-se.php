@@ -106,7 +106,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
             <a class="collapse-item" href="tabla-tipousuarios.php">Tipo de usuarios</a>
             <a class="collapse-item" href="tabla-se.php">Sistema Educativos</a>
             <a class="collapse-item" href="tabla-directivos.php">Directivos</a>
-            <a class="collapse-item" href="tabla-usuarios.php">Usuarios</a>
+            
             <a class="collapse-item" href="tabla-delegaciones.php">Delegaciones</a>
             <a class="collapse-item" href="tabla-barrios.php">Barrios</a>
             <a class="collapse-item" href="tabla-iteracciones.php">Interacciones</a>
@@ -230,13 +230,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>ID tipo se</th>
-                      <th>Autoridad</th>
+                      <th>Tipo de SE</th>
+                      <th>Nombre</th>
+                      <th>Director</th>
                       <th>Nivel</th>
                       <th>Numero</th>
-                      <th>Nombre</th>
-                      <th>ID usuario</th>
-                      <th>ID director</th>
+                      <th>Nombre usuario</th>
+                      <th>Autoridad</th>
                       <th>Calle</th>
                       <th>Delegación</th>
                       <th>Barrio</th>
@@ -255,14 +255,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($conn->connect_error) {
                               die("Connection failed: " . $conn->connect_error);
                           }
-                          $sql = "SELECT * FROM servicioeducativo";
+                          $sql = "SELECT * FROM servicioeducativo inner join tipose on servicioeducativo.tipose=tipose.idtipo inner join usuarios on servicioeducativo.idusuario=usuarios.idusuario inner join director on servicioeducativo.iddirector=director.iddirector";
                           $result = $conn->query($sql);
 
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr><td>".$row["tipo se"]."</td>"."<td>".$row["autoridad"]."</td>"."<td>".$row["nivel"]."</td>"."<td>".$row["numero"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["ID Usuario"]."</td>".
-                                  $row["iddirector"]."</td>"."<td>".$row["direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["telefono"]."</td></tr>";
+                                  echo "<tr>"."<td>".$row["tipose"]."</td>"."<td>".$row['Nombrese']."</td>"."<td>".$row["nombredi"]."</td>"."<td>".$row["Nivel"]."</td>"."<td>".$row["Numero"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["Autoridad"]."</td>"."<td>".$row["Direccion"]."</td>"."<td>".$row["iddelegacion"]."</td>"."<td>".$row["idbarrio"]."</td>"."<td>".$row["Telefono"]."</td></tr>";
                               }
                           }
                           $conn->close();
