@@ -232,9 +232,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                   <thead>
                     <tr>
                     <th>Nro de interaccion</th>
-                    <th>idse</th>
-                    <th>idtipodeinteraccion</th>
-                    <th>idresponsable</th>
+                    <th>Servicio educativo</th>
+                    <th>tipo de interaccion</th>
+                    <th>responsable</th>
                     <th>estado</th>
                     <th>observacion</th>
                     <th>fechainteraccion</th>
@@ -258,7 +258,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
                           if ($result->num_rows > 0) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
-                                  echo "<tr>"."<td>".$row["idinteraccion"]."</td>"."<td>".$row["servicioeducativo.nombre"]."</td>"."<td>".$row["tiposdeinteracciones.tipodeinteraccion"]."</td>"."<td>".$row["referentes.nombre"]."</td>"."<td>".$row["estado"]."</td>"."<td>".$row["observacion"]."</td>"."<td>".$row["fechadeinteraccion"]."</td>";
+                                  echo "<tr>"."<td>".$row["idinteraccion"]."</td>"."<td>".$row["Nombrese"]."</td>"."<td>".$row["tipodeinteraccion"]."</td>"."<td>".$row["nombre"]."</td>"."<td>".$row["estado"]."</td>"."<td>".$row["observacion"]."</td>"."<td>".$row["fechainteraccion"]."</td>"."</tr>";
                               }
                           }
 

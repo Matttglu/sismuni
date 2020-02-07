@@ -20,4 +20,8 @@
 
 
         $conn->close();
+
+        echo'<script type="text/javascript">
+              window.location.href="tabla-delegaciones.php";
+              </script>';
 ?>

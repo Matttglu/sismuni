@@ -27,5 +27,9 @@
 
 
         $result = $conn->query($sql);
+
+        echo'<script type="text/javascript">
+              window.location.href="tabla-iteracciones.php";
+              </script>';
         $conn->close();
 ?>
