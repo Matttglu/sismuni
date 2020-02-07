@@ -92,7 +92,7 @@ require ('conexion.php');
                                   <select id="se" name="idse">
 
                                   </select>
-
+                                  <br>
                                   <label>Tipo de Usuario</label>
                                   <select id="lista1" name="lista1">
                                       <option value="0">Selecciona una opcion</option>
