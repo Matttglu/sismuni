@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-01-2020 a las 20:20:38
+-- Tiempo de generación: 21-02-2020 a las 21:14:42
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 5.6.38
 
@@ -100,6 +100,16 @@ CREATE TABLE `interacciones` (
   `estado` varchar(40) COLLATE utf32_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `interacciones`
+--
+
+INSERT INTO `interacciones` (`idinteraccion`, `idse`, `idtipodeinteraccion`, `idresponsable`, `observacion`, `fechainteraccion`, `estado`) VALUES
+(1, 4, 1, 1, 'puto', 'ayer', 'en proceso'),
+(2, 4, 1, 1, 'puto', 'ayer', 'en proceso'),
+(3, 4, 1, 1, 'puto', 'ayer', 'en proceso'),
+(4, 4, 1, 1, 'puto', 'ayer', 'en proceso');
+
 -- --------------------------------------------------------
 
 --
@@ -122,7 +132,8 @@ CREATE TABLE `referentes` (
 --
 
 INSERT INTO `referentes` (`idusuario`, `nombre`, `apellido`, `idtipousuario`, `email`, `password`, `fechabaja`, `idcoordinador`) VALUES
-(1, 'Valentin ', 'Gluszczuk', 3, 'valentingluszczuk@gmail.com', '$2y$10$5gxd/d7sA.XZQjySiVHpZ.6.VTNijVJfOGuCiwDUlxQLlw9Hujgfe', '0000-00-00', 0);
+(1, 'Valentin ', 'Gluszczuk', 3, 'valentingluszczuk@gmail.com', '$2y$10$5gxd/d7sA.XZQjySiVHpZ.6.VTNijVJfOGuCiwDUlxQLlw9Hujgfe', '0000-00-00', 0),
+(2, 'Matias', 'Gluszczuk', 3, 'dadw@sad', '$2y$10$2RXTwCJj3lGiTitTRZmUoOhYoTSoYg.I/3itcAV94nQRIjLcx6dpu', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -250,7 +261,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellido`, `idtipousuario`, `email`, `password`, `fechabaja`) VALUES
-(1, '', '', 1, 'root', 'root', '0000-00-00'),
+(1, 'valentin', 'gluszczuk', 3, 'valentin@gmail.com', '$2y$10$lSexE32wYaoKKs87e2mmve7KBZ8imn2NEE9IgP46f5wn7kpARznW2', '0000-00-00'),
 (2, 'Matias ', 'Gluszczuk', 1, 'matttglu@gmail.com', '$2y$10$EHcz4.FljeaQxOaF9XGZCe9BT55yNpmXbo29paqAAXNzdwLKYpszq', '0000-00-00'),
 (4, 'leandro', 'weber', 2, 'weberleand@patito.com', '$2y$10$A8i6R5BNzt2YyRPKHjvxtOgKNQs1gRCOY4xOmo0eQHJC5OOOGCWqC', '0000-00-00'),
 (5, 'Matias', 'Gluszczuk', 3, 'matttglu@outlook.com', '$2y$10$HKAS3Qfg6GsYlv77T8yJIegPVd1WeIfSw3.MvFeyLmaRKGaykAwqS', '0000-00-00'),
@@ -365,7 +376,7 @@ ALTER TABLE `interacciones`
 -- AUTO_INCREMENT de la tabla `referentes`
 --
 ALTER TABLE `referentes`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `servicioeducativo`
