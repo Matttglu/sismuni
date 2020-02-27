@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-02-2020 a las 21:14:42
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 5.6.38
+-- Tiempo de generación: 28-02-2020 a las 00:00:18
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -265,7 +265,7 @@ INSERT INTO `usuarios` (`idusuario`, `nombre`, `apellido`, `idtipousuario`, `ema
 (2, 'Matias ', 'Gluszczuk', 1, 'matttglu@gmail.com', '$2y$10$EHcz4.FljeaQxOaF9XGZCe9BT55yNpmXbo29paqAAXNzdwLKYpszq', '0000-00-00'),
 (4, 'leandro', 'weber', 2, 'weberleand@patito.com', '$2y$10$A8i6R5BNzt2YyRPKHjvxtOgKNQs1gRCOY4xOmo0eQHJC5OOOGCWqC', '0000-00-00'),
 (5, 'Matias', 'Gluszczuk', 3, 'matttglu@outlook.com', '$2y$10$HKAS3Qfg6GsYlv77T8yJIegPVd1WeIfSw3.MvFeyLmaRKGaykAwqS', '0000-00-00'),
-(6, 'susi', 'pinchop', 3, 'sis@gmail.com', '$2y$10$bAac24oeir9Ff/WH2kHCou8nQAGweu1enqsmy00RyO3ox3SLOoLuu', '0000-00-00');
+(7, 'martin', 'vinuales', 2, 'martin@municipio.com', '$2y$10$1LMg34JtZuwo/0Pqme4QrOECtrAcCwo1FSnV7bvbbdiJfIZrzFwjO', '0000-00-00');
 
 --
 -- Índices para tablas volcadas
@@ -376,7 +376,7 @@ ALTER TABLE `interacciones`
 -- AUTO_INCREMENT de la tabla `referentes`
 --
 ALTER TABLE `referentes`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `servicioeducativo`
@@ -400,7 +400,7 @@ ALTER TABLE `tipose`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idusuario` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

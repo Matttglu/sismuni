@@ -33,7 +33,7 @@ if ($count == 1) {
 
 } else {
   if ($tipo=3){
-    $sql = "INSERT INTO referentes (nombre, apellido, email, idtipousuario, password )
+    $sql = "INSERT INTO usuarios (nombre, apellido, email, idtipousuario, password )
     VALUES ('". $nombre ."','". $apellido . "','". $email . "','". $tipo . "','". $hash . "')";
 
     if ($conn->query($sql) === TRUE) {
